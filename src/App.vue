@@ -6,7 +6,7 @@
       dark
     >
       <div style="cursor: pointer;" class="d-flex align-center" >
-        <h3>Пользователи</h3>
+        <router-link style="text-decoration: none; color: inherit;" to="/"><h3> Пользователи</h3></router-link>
       </div>
           
       <v-spacer></v-spacer>
@@ -19,16 +19,11 @@
 </template>
 
 <script>
-import UsersList from './components/UsersList.vue';
-import CurrentUser from './components/CurrentUser.vue';
+
 
 export default {
   name: 'App',
 
-  components: {
-    UsersList,
-    CurrentUser
-  },
 
   data: () => ({
     //

@@ -16,8 +16,31 @@
         :headers="headers"
         :items="users"
         :search="search"
-        no-data-text="Пусто"
       >
+        <template v-slot:item="props">
+          <tr>
+            <td style="cursor: pointer;" @click="expandRow(props.item)">
+              <!-- <router-link style="text-decoration: none; color: inherit;" to="/currentuser"> -->
+              {{props.item.name}}
+              <!-- </router-link> -->
+            </td>
+            <td>
+              {{props.item.email}}
+            </td>
+            <td>
+              {{props.item.username}}
+            </td>
+            <td>
+              {{props.item.phone}}
+            </td>
+            <td>
+              {{props.item.address.city}}
+            </td>
+            <td>
+              {{props.item.company.name}}
+            </td>
+          </tr>
+        </template>
       </v-data-table>
     </v-card>
   </v-container>
@@ -46,6 +69,9 @@
       }
     },
     methods:{
+      expandRow(data){
+        this.$router.push({name: 'currentuser', params: {data : data}})
+      },
       getUsers(){
         fetch('https://jsonplaceholder.typicode.com/users')
           .then(response => response.json())
@@ -60,3 +86,6 @@
     }
   }
 </script>
+<style scoped>
+
+</style>

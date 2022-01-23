@@ -8,11 +8,13 @@ export default new VueRouter({
     routes: [
       {
         path: '/',
+        name:'UsersList',
         component: UsersList,
       },
       {
         path: '/currentuser',
-        component: CurrentUser,
+        name:'currentuser',
+        component: CurrentUser
       }
     ]
 })
