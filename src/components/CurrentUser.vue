@@ -1,51 +1,100 @@
 <template>
     <div class="container">
-        <v-form v-model="valid">
-    <v-container>
-      <v-row>
-        <v-col
-          cols="12"
-          sm="4"
-          md="4"
-        >
-          <v-text-field
-            v-model="firstname"
-            :rules="nameRules"
-            :counter="10"
-            label="First name"
-            required
-          ></v-text-field>
-        </v-col>
+        <v-container>
+            <v-row>
+                <v-col
+                sm="4"
+                lg="4"
+                xs="12"
+                md="12"
+                >
+                <v-text-field
+                    v-model="currentUser.name"
+                    label="Имя"
+                ></v-text-field>
+                </v-col>
 
-        <v-col
-          cols="12"
-          sm="4"
-          md="4"
-        >
-          <v-text-field
-            v-model="lastname"
-            :rules="nameRules"
-            :counter="10"
-            label="Last name"
-            required
-          ></v-text-field>
-        </v-col>
+                <v-col
+                sm="4"
+                lg="4"
+                xs="12"
+                md="12"
+                >
+                <v-text-field
+                    v-model="currentUser.email"
+                    label="Email"
+                ></v-text-field>
+                </v-col>
 
-        <v-col
-          cols="12"
-          sm="4"
-          md="4"
-        >
-          <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            label="E-mail"
-            required
-          ></v-text-field>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-form>
+                <v-col
+                sm="12"
+                xs="12"
+                md="12"
+                lg="4"
+                >
+                <v-text-field
+                    v-model="currentUser.phone"
+                    label="Телефон"
+                ></v-text-field>
+                </v-col>
+                <v-col
+                sm="12"
+                xs="12"
+                md="12"
+                lg="4"
+                >
+                <v-text-field
+                    v-model="currentUser.website"
+                    label="Веб-сайт"
+                ></v-text-field>
+                </v-col>
+                <v-col
+                sm="12"
+                xs="12"
+                md="12"
+                lg="4"
+                >
+                <v-text-field
+                    v-model="currentUser.username"
+                    label="Никнейм"
+                ></v-text-field>
+                </v-col>
+                <v-col
+                sm="12"
+                xs="12"
+                md="12"
+                lg="4"
+                >
+                <v-text-field
+                    v-model="currentUser.company.name"
+                    label="Название компании"
+                ></v-text-field>
+                </v-col>
+                <v-col
+                xs="12"
+                sm="12"
+                md="12"
+                lg="4"
+                >
+                <v-text-field
+                    v-model="currentUser.address.city"
+                    label="Город"
+                ></v-text-field>
+                </v-col>
+                <v-col
+                xs="12"
+                sm="12"
+                md="12"
+                lg="4"
+                >
+                <v-text-field
+                    v-model="currentUser.address.street"
+                    label="Улица"
+                ></v-text-field>
+                </v-col>
+            </v-row>
+            <v-btn @click="save" color="green">Сохранить</v-btn>
+        </v-container>
     </div>
 </template>
 <script>
@@ -53,18 +102,12 @@ export default {
     data() {
         return {
             currentUser:[],
-            alid: false,
-      firstname: '',
-      lastname: '',
-      nameRules: [
-        v => !!v || 'Name is required',
-        v => v.length <= 10 || 'Name must be less than 10 characters',
-      ],
-      email: '',
-      emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid',
-      ],
+           
+        }
+    },
+    methods:{
+        save(){
+            this.currentUser=this.currentUser
         }
     },
     created(){ 

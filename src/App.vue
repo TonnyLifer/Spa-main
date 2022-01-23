@@ -6,7 +6,7 @@
       dark
     >
       <div style="cursor: pointer;" class="d-flex align-center" >
-        <router-link style="text-decoration: none; color: inherit;" to="/"><h3> Пользователи</h3></router-link>
+        <router-link style="text-decoration: none; color: inherit;" to="/"><h3>Пользователи</h3></router-link>
       </div>
           
       <v-spacer></v-spacer>
