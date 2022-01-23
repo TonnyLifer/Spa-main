@@ -1,17 +1,18 @@
 import VueRouter from "vue-router";
 import UsersList from './components/UsersList.vue'
+import CurrentUser from './components/CurrentUser.vue'
 import App from './App.vue'
 
-export const router = new VueRouter({
+export default new VueRouter({
     mode: 'history',
     routes: [
       {
-        path: '/users',
+        path: '/',
         component: UsersList,
       },
       {
-        path: '/',
-        component: App,
+        path: '/currentuser',
+        component: CurrentUser,
       }
     ]
 })

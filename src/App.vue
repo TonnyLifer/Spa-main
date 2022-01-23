@@ -5,27 +5,29 @@
       color="primary"
       dark
     >
-      <div style="cursor: pointer;" class="d-flex align-center">
-        <router-link to="/users">Пользователи</router-link>
+      <div style="cursor: pointer;" class="d-flex align-center" >
+        <h3>Пользователи</h3>
       </div>
-
+          
       <v-spacer></v-spacer>
     </v-app-bar>
-      <!-- <router-view></router-view> -->
+    
     <v-main>
-      <UsersList/>
+     <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
 import UsersList from './components/UsersList.vue';
+import CurrentUser from './components/CurrentUser.vue';
 
 export default {
   name: 'App',
 
   components: {
     UsersList,
+    CurrentUser
   },
 
   data: () => ({
