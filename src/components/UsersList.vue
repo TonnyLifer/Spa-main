@@ -18,8 +18,8 @@
         :search="search"
       >
         <template v-slot:item="props">
-          <tr>
-            <td style="cursor: pointer;" @click="expandRow(props.item)">
+          <tr  style="cursor: pointer;" @click="expandRow(props.item)">
+            <td>
               <!-- <router-link style="text-decoration: none; color: inherit;" to="/currentuser"> -->
               {{props.item.name}}
               <!-- </router-link> -->

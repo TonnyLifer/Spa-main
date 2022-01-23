@@ -93,7 +93,6 @@
                 ></v-text-field>
                 </v-col>
             </v-row>
-            <v-btn @click="save" color="green">Сохранить</v-btn>
         </v-container>
     </div>
 </template>
@@ -106,9 +105,6 @@ export default {
         }
     },
     methods:{
-        save(){
-            this.currentUser=this.currentUser
-        }
     },
     created(){ 
         this.currentUser = this.$route.params.data
