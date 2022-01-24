@@ -12,7 +12,7 @@ export default new VueRouter({
         component: UsersList,
       },
       {
-        path: '/currentuser',
+        path: '/currentuser/:id',
         name:'currentuser',
         component: CurrentUser
       }

@@ -97,18 +97,22 @@
     </div>
 </template>
 <script>
+import {mapActions, mapGetters} from 'vuex';
 export default {
     data() {
         return {
-            currentUser:[],
-           
+            // currentUser:[],
         }
     },
     methods:{
+        ...mapActions(['getUser'])
     },
     created(){ 
-        this.currentUser = this.$route.params.data
-        console.log(this.currentUser)
+
+        this.getUser(this.$route.params.id-1)
+    },
+    computed:{
+        ...mapGetters(['currentUser'])
     }
 }
 </script>

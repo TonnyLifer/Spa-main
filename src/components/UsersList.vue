@@ -70,7 +70,7 @@
     },
     methods:{
       expandRow(data){
-        this.$router.push({name: 'currentuser', params: {data : data}})
+        this.$router.push({name: 'currentuser', params: { id : data.id}})
       },
       getUsers(){
         fetch('https://jsonplaceholder.typicode.com/users')
