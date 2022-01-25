@@ -20,9 +20,7 @@
         <template v-slot:item="props">
           <tr  style="cursor: pointer;" @click="expandRow(props.item)">
             <td>
-              <!-- <router-link style="text-decoration: none; color: inherit;" to="/currentuser"> -->
               {{props.item.name}}
-              <!-- </router-link> -->
             </td>
             <td>
               {{props.item.email}}

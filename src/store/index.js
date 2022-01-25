@@ -14,7 +14,6 @@ export default new Vuex.Store({
   },
   getters:{
     currentUser(state){
-        // console.log(this.state.users)
         return state.users
       }
   },
@@ -23,11 +22,10 @@ export default new Vuex.Store({
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then(json => {
-            if(json[payload]){
-            commit('SET_USER',json[payload])}
+                if(json[payload]){
+                  commit('SET_USER',json[payload])}
         })
           
-        //   console.log(this.state.users)
       }
   }
 })

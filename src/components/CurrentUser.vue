@@ -1,6 +1,13 @@
 <template>
     <div class="container">
-        <v-container>
+        <div v-if="!currentUser" class="text-center">
+            <v-progress-circular
+            :size="50"
+            color="primary"
+            indeterminate
+            ></v-progress-circular>
+        </div>
+        <v-container v-else>
             <v-row>
                 <v-col
                 sm="4"
@@ -101,7 +108,6 @@ import {mapActions, mapGetters} from 'vuex';
 export default {
     data() {
         return {
-            // currentUser:[],
         }
     },
     methods:{
